@@ -7,7 +7,6 @@ import org.apache.commons.lang.StringUtils;
  */
 public class Strings {
 
-    private static final int ELLIPSIS_SIZE = 3;
     private static final String ELLIPSIS = "...";
 
     private Strings() {}
@@ -32,7 +31,7 @@ public class Strings {
     }
 
     private static String getAbbreviate(String s, int tamanho) {
-        return StringUtils.abbreviate(s, tamanho + ELLIPSIS_SIZE);
+        return StringUtils.abbreviate(s, tamanho + ELLIPSIS.length());
     }
 
     private static boolean isReturnEllipsis(int tamanho) {
