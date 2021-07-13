@@ -72,4 +72,60 @@ class ArrayListsTest {
 
         assertEquals(1, quantidade);
     }
+
+    @Test
+    void getMenorQuantidadeDeCedulasPossivelParaInteiro_test01() {
+        int valorEntrada = 89;
+        List<Integer> cedulas = ArrayLists.getMenorQuantidadeDeCedulasPossivelParaInteiro(valorEntrada);
+
+        assertEquals(asList(0, 1, 1, 1, 1, 2, 0), cedulas);
+    }
+
+    @Test
+    void getMenorQuantidadeDeCedulasPossivelParaInteiro_test02() {
+        int valorEntrada = 1850;
+        List<Integer> cedulas = ArrayLists.getMenorQuantidadeDeCedulasPossivelParaInteiro(valorEntrada);
+
+        assertEquals(asList(18, 1, 0, 0, 0, 0, 0), cedulas);
+    }
+
+    @Test
+    void getMenorQuantidadeDeCedulasPossivelParaInteiro_test03() {
+        int valorEntrada = 11257;
+        List<Integer> cedulas = ArrayLists.getMenorQuantidadeDeCedulasPossivelParaInteiro(valorEntrada);
+
+        assertEquals(asList(112, 1, 0, 0, 1, 1, 0), cedulas);
+    }
+
+    @Test
+    void getMenorQuantidadeDeCedulasPossivelParaInteiro_test04() {
+        int valorEntrada = 503;
+        List<Integer> cedulas = ArrayLists.getMenorQuantidadeDeCedulasPossivelParaInteiro(valorEntrada);
+
+        assertEquals(asList(5, 0, 0, 0, 0, 1, 1), cedulas);
+    }
+
+    @Test
+    void getMenorQuantidadeDeCedulasPossivelParaInteiro_test05() {
+        int valorEntrada = 1;
+        List<Integer> cedulas = ArrayLists.getMenorQuantidadeDeCedulasPossivelParaInteiro(valorEntrada);
+
+        assertEquals(asList(0, 0, 0, 0, 0, 0, 1), cedulas);
+    }
+
+    @Test
+    void getPessoasOrdenadasAlfabeticamenteCrescente_test01() {
+        List<String> pessoas = new ArrayList<>(asList("Felix", "Daiane", "Erivelto",
+                "Paulo", "Maycon", "Elizandro"));
+        List<String> pessoasOrdenadas = ArrayLists.getPessoasOrdenadasAlfabeticamenteCrescente(new ArrayList(pessoas));
+        assertEquals(asList("Daiane", "Elizandro", "Erivelto", "Felix", "Maycon", "Paulo"), pessoasOrdenadas);
+    }
+
+    @Test
+    void getPessoasOrdenadasAlfabeticamenteDecrescente_test01() {
+        List<String> pessoas = new ArrayList<>(asList("Felix", "Daiane", "Erivelto",
+                "Paulo", "Maycon", "Elizandro"));
+        List<String> pessoasOrdenadas = ArrayLists.getPessoasOrdenadasAlfabeticamenteDecrescente(new ArrayList(pessoas));
+        assertEquals(asList("Paulo", "Maycon", "Felix", "Erivelto", "Elizandro", "Daiane"), pessoasOrdenadas);
+    }
 }

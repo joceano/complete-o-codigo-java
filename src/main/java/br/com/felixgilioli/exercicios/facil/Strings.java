@@ -37,4 +37,15 @@ public class Strings {
     private static boolean isReturnString(String s, int tamanho) {
         return s == null || s.isEmpty() || tamanho < 0 || tamanho >= s.length();
     }
+
+    /**
+     * Deve verificar se a senha é nula, vazia ou que não esteja preenchida apenas com espaços em branco.
+     * ex: s=null, "", "  "
+     * @param s string a ser verificada.
+     * @return true se a string estiver em branco.
+     */
+    public static boolean isBlank(String s) {
+        return false;
+    }
+
 }
