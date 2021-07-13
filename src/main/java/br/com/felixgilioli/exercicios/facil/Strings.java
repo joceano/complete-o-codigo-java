@@ -1,9 +1,13 @@
 package br.com.felixgilioli.exercicios.facil;
 
+import org.apache.commons.lang.StringUtils;
+
 /**
  * Classe com métodos para trabalhar com Strings.
  */
 public class Strings {
+
+    private static final int RETICENCIAS = 3;
 
     private Strings() {}
 
@@ -19,7 +23,18 @@ public class Strings {
      * @return string truncada.
      */
     public static String getStringTruncada(String s, int tamanho) {
-        return null;
+        if (isReturnString(s, tamanho))
+            return s;
+        if (isReturnEmpty(tamanho))
+            return StringUtils.EMPTY;
+        return StringUtils.abbreviate(s, tamanho + RETICENCIAS);
     }
 
+    private static boolean isReturnEmpty(int tamanho) {
+        return tamanho == 0;
+    }
+
+    private static boolean isReturnString(String s, int tamanho) {
+        return s == null || s.isEmpty() || tamanho < 0 || tamanho >= s.length();
+    }
 }
