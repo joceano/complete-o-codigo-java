@@ -1,5 +1,7 @@
 package br.com.felixgilioli.exercicios.facil;
 
+import java.util.Objects;
+
 /**
  * Classe com métodos para trabalhar com booleanos.
  */
@@ -14,6 +16,6 @@ public class Booleanos {
      * @return valor booleano não nulo.
      */
     public static Boolean falseIfNull(Boolean bool) {
-        return null;
+        return !Objects.isNull(bool) && bool;
     }
 }
