@@ -7,7 +7,8 @@ import org.apache.commons.lang.StringUtils;
  */
 public class Strings {
 
-    private static final int RETICENCIAS = 3;
+    private static final int ELLIPSIS_SIZE = 3;
+    private static final String ELLIPSIS = "...";
 
     private Strings() {}
 
@@ -25,12 +26,16 @@ public class Strings {
     public static String getStringTruncada(String s, int tamanho) {
         if (isReturnString(s, tamanho))
             return s;
-        if (isReturnEmpty(tamanho))
-            return StringUtils.EMPTY;
-        return StringUtils.abbreviate(s, tamanho + RETICENCIAS);
+        if (isReturnEllipsis(tamanho))
+            return ELLIPSIS;
+        return getAbbreviate(s, tamanho);
     }
 
-    private static boolean isReturnEmpty(int tamanho) {
+    private static String getAbbreviate(String s, int tamanho) {
+        return StringUtils.abbreviate(s, tamanho + ELLIPSIS_SIZE);
+    }
+
+    private static boolean isReturnEllipsis(int tamanho) {
         return tamanho == 0;
     }
 
@@ -45,7 +50,7 @@ public class Strings {
      * @return true se a string estiver em branco.
      */
     public static boolean isBlank(String s) {
-        return false;
+        return StringUtils.isBlank(s);
     }
 
 }

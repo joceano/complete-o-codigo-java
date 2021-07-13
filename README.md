@@ -24,10 +24,10 @@ Estes aqui são os temas dos desafios disponíveis para serem implementados. Se 
 - Fácil
   - [ ] ArrayLists
   - [ ] BigDecimals
-  - [ ] Booleanos
+  - [X] Booleanos
   - [ ] Calculadora
   - [ ] LocalDates
-  - [ ] Strings
+  - [X] Strings
 - Médio 
   - [ ] DiaDaSemanaEnum
   - [ ] JSONs
